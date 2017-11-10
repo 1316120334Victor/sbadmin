@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+	<title>Practica ajax</title>
+  <meta charset="utf-8">
+	  <!-- Bootstrap Core CSS -->
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+
+          <!-- 
+          <link href="css/sb-admin.css" rel="stylesheet">
+Custom CSS -->
+          <!-- Morris Charts CSS -->
+          <link href="css/plugins/morris.css" rel="stylesheet">
+
+          <!-- Custom Fonts -->
+          <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+            <!-- jquery 3.2.1.min 
+            <link href="js/jquery-3.2.1.min.js" rel="stylesheet">
+            jquery interaccionajax.js -->
+          <!--   <link href="js/procesos/interaccionajax.js" rel="stylesheet">-->
+
+    </head>
+
+
+
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+          <input id="buscar" type="search" placeholder="Search">
+          <button onclick="filtrarCarrera()"  >Buscar</button>
+        
+
+      <!--   tabla-->
+      <section>
+                  <div>
+                   <input id="nuevo" onclick="cargarCarrera()" type="button" value="Cargar Datos"  class="btn btn-success">
+                  </div>
+
+
+                  <table class="table table-bordered" >
+                    	<thead>
+                              <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Direcci&oacute;n</th>
+                                <th>Telefono</th> 
+                                <th>Correo</th> 
+                                <th>Titulaci&oacute;n</th> 
+                                <th>Seción</th> 
+                                <th colspan="2">Acciones</th>   
+                              </tr> 
+                      </thead>
+                  <tbody id ="tablaDatos"></tbody>
+
+                  </table>
+      </section>
+
+      <!-- formulario Ingresar-->
+      <section  >
+        <div class="card  mx-auto mt-7">
+
+          
+            <div>
+              <input id="nuevo2" onclick="probando()" type="button" value="Guardar"  class="btn btn-success">
+            </div>
+          
+           
+         
+
+            <section >
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Codigo</label>
+                <input class="form-control" id="idCodigo" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
+              </div>
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Nombre/ Name</label>
+                <input class="form-control" id="idNombre" type="text" aria-describedby="nameHelp" placeholder="Enter name">
+              </div>
+
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Direcci&oacute;n</label>
+                <input class="form-control" id="idDireccion" type="text" aria-describedby="nameHelp" placeholder="Enter Dirección">
+              </div>
+
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Telefono</label>
+                <input class="form-control" id="idTelefono" type="text" aria-describedby="nameHelp" placeholder="Enter Telefono">
+              </div>
+
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Correo</label>
+                <input class="form-control" id="idCorreo" type="text" aria-describedby="nameHelp" placeholder="Enter Correo">
+              </div>
+
+              <div class="col-md-6">
+                <label for="exampleInputLastName">Titulaci&oacute;n</label>
+                <input class="form-control" id="idTitulacion" type="text" aria-describedby="nameHelp" placeholder="Enter Titulaci&oacute;n">
+              </div>
+
+              <div class="col-md-6">
+                
+                <label for="exampleInputLastName"> Tipo Secci&oacute;n</label>
+                <input class="form-control" id="idtipo" type="text" aria-describedby="nameHelp" placeholder="Enter Secci&oacute;n">
+                <br>
+
+                <select id="idtipoCombo"  class="form-control"  aria-describedby="nameHelp" required >
+
+                </select>
+                
+              </div>
+            </section>
+        </div>
+
+      </section>
+
+
+      </nav>
+    <!-- interaccion-->
+      <script src="js/procesos/interaccionajax.js"></script>
+
+      <!-- jQuery -->
+      <script src="js/jquery.js"></script>  
+
+      <script>
+        window.onload = function() {
+        //funciones a ejecutar
+        cargarCombo();
+        cargarCarrera();
+        };
+      </script> 
+          
+    </body>
+
+
+
+
+
+</html>
