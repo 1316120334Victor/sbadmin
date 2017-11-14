@@ -33,8 +33,8 @@ Custom CSS -->
           <button onclick="filtrarCarrera()"  >Buscar</button>
         
 
-      <!--   tabla-->
-      <section>
+      <!--   tabla carrera-->
+      <section hidden>
                   <div>
                    <input id="nuevo" onclick="cargarCarrera()" type="button" value="Cargar Datos"  class="btn btn-success">
                   </div>
@@ -58,8 +58,8 @@ Custom CSS -->
                   </table>
       </section>
 
-      <!-- formulario Ingresar-->
-      <section  >
+      <!-- formulario Ingresar carrera-->
+      <section  hidden>
         <div class="card  mx-auto mt-7">
 
           
@@ -116,8 +116,83 @@ Custom CSS -->
 
       </section>
 
+      <!--   tabla persona-->
+      <section>
+        <div>
+         <input id="nuevo" onclick="cargarPersona()" type="button" value="Cargar Datos Persona"  class="btn btn-success">
+        </div>
 
-      </nav>
+
+        <table class="table table-bordered" >
+            <thead>
+                    <tr>
+                      <th>Codigo</th>
+                      <th>identificación</th>
+                      <th>nombre</th>
+                      <th>apellido</th> 
+                      <th>usuario</th> 
+                      <th>fechanacimiento</th> 
+                      <th>tipo</th> 
+                      <th colspan="2">Acciones</th>   
+                    </tr> 
+            </thead>
+        <tbody id ="tablaDatosPersona"></tbody>
+
+        </table>
+      </section>
+
+      <!-- formulario Ingresar persona-->
+      <section  >
+        <div class="card  mx-auto mt-7">
+
+
+          <div>
+            <input id="nuevo" onclick="validar()" type="button" value="Guardar"  class="btn btn-success">
+          </div>     
+          <section >
+            <div class="col-md-6">
+              <label for="exampleInputLastName">Codigo</label>
+              <input class="form-control" id="idpersona" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
+            </div>
+            <div class="col-md-6">
+              <label for="exampleInputLastName">identificación/ Name</label>
+              <input class="form-control" id="ididentificacion" type="text" aria-describedby="nameHelp" placeholder="identificación">
+            </div>
+
+            <div class="col-md-6">
+              <label for="exampleInputLastName">nombre</label>
+              <input class="form-control" id="idnombre" type="text" aria-describedby="nameHelp" placeholder="nombre">
+            </div>
+
+            <div class="col-md-6">
+              <label for="exampleInputLastName">apellido</label>
+              <input class="form-control" id="idapellido" type="text" aria-describedby="nameHelp" placeholder="apellido">
+            </div>
+
+            <div class="col-md-6">
+              <label for="exampleInputLastName">usuario</label>
+              <input class="form-control" id="idusuario" type="text" aria-describedby="nameHelp" placeholder="usuario">
+            </div>
+
+            <div class="col-md-6">
+              <label for="exampleInputLastName">fechanacimiento</label>
+              <input class="form-control" id="idfechanacimiento" type="text" aria-describedby="nameHelp" placeholder="fechanacimiento">
+            </div>
+
+            <div class="col-md-6">
+
+              <select id="idcombotipoP"  class="form-control"  aria-describedby="nameHelp" required >
+
+              </select>
+              
+            </div>
+          </section>
+        </div>
+
+      </section>
+
+
+      
     <!-- interaccion-->
       <script src="js/procesos/interaccionajax.js"></script>
 
@@ -129,6 +204,8 @@ Custom CSS -->
         //funciones a ejecutar
         cargarCombo();
         cargarCarrera();
+        cargarPersona();
+        cargarComboTipoPersona();
         };
       </script> 
           
