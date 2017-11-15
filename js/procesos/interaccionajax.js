@@ -251,7 +251,7 @@ function filtrarCarrera()
                     success: function(requestData)   // A function to be called if request succeeds
                     {
                         var data = JSON.parse(requestData);
-                        actualizartabla(data);
+                        actualizartablaCarrera(data);
                     }
                  });
 

@@ -278,7 +278,7 @@
 			$sql=" SELECT carrera.idcarrera, carrera.Nombre, carrera.Direccion, carrera.Telefono, carrera.Correo, carrera.Titulacion, 
 			carrera.idtipo,seccion.idSeccion,seccion.Descripcion FROM carrera 
 						INNER JOIN seccion ON carrera.idtipo=seccion.idSeccion  
-						where carrera.Nombre like '%".$buscar."%' or seccion.Descripcion like '%".$buscar."%' ";
+						where carrera.Nombre like '%".$buscar."%' or carrera.Telefono like '%".$buscar."%' ";
 
 			try 
 			{
