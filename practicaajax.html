@@ -27,170 +27,169 @@ Custom CSS -->
 
     <body>
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        
-          <input id="buscar" type="search" placeholder="Search">
-          <button onclick="filtrarCarrera()"  >Buscar</button>
-        
-
-      <!--   tabla carrera-->
-      <section hidden>
-                  <div>
-                   <input id="nuevo" onclick="cargarCarrera()" type="button" value="Cargar Datos"  class="btn btn-success">
-                  </div>
+       <!--   Seccion carrera-->
+      <section>
+          <h1> DATOS CARRERAS</h1>
+          
+        <!--   tabla carrera-->
+        <section >
+                    <div class="card  mx-auto mt-7">
+                    <input id="nuevo" onclick="cargarCarrera()" type="button" value="Cargar Datos Carrera"  class="btn btn-success">
+                    </div>
 
 
-                  <table class="table table-bordered" >
-                    	<thead>
-                              <tr>
-                                <th>Codigo</th>
-                                <th>Nombre</th>
-                                <th>Direcci&oacute;n</th>
-                                <th>Telefono</th> 
-                                <th>Correo</th> 
-                                <th>Titulaci&oacute;n</th> 
-                                <th>Seción</th> 
-                                <th colspan="2">Acciones</th>   
-                              </tr> 
-                      </thead>
-                  <tbody id ="tablaDatos"></tbody>
+                    <table class="table table-bordered" >
+                        <thead>
+                                <tr>
+                                  <th>Codigo</th>
+                                  <th>Nombre</th>
+                                  <th>Direcci&oacute;n</th>
+                                  <th>Telefono</th> 
+                                  <th>Correo</th> 
+                                  <th>Titulaci&oacute;n</th> 
+                                  <th>Seción</th> 
+                                  <th colspan="2">Acciones</th>   
+                                </tr> 
+                        </thead>
+                    <tbody id ="tablaDatosCarrera"></tbody>
 
-                  </table>
+                    </table>
+        </section>
+
+        <!-- formulario Ingresar carrera-->
+        <section  >
+          <div class="card  mx-auto mt-7">
+            <input id="buscarC" type="search" placeholder="Search">
+            <button onclick="filtrarCarrera()"  >Buscar Carrera</button>
+            
+              <div>
+                <input id="nuevo2" onclick="validarCarrera()" type="button" value="Guardar Carrera"  class="btn btn-success">
+              </div>
+            
+              <section >
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Codigo</label>
+                  <input class="form-control" id="idCodigo" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
+                </div>
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Nombre/ Name</label>
+                  <input class="form-control" id="idNombre" type="text" aria-describedby="nameHelp" placeholder="Enter name">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Direcci&oacute;n</label>
+                  <input class="form-control" id="idDireccion" type="text" aria-describedby="nameHelp" placeholder="Enter Dirección">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Telefono</label>
+                  <input class="form-control" id="idTelefono" type="text" aria-describedby="nameHelp" placeholder="Enter Telefono">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Correo</label>
+                  <input class="form-control" id="idCorreo" type="text" aria-describedby="nameHelp" placeholder="Enter Correo">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Titulaci&oacute;n</label>
+                  <input class="form-control" id="idTitulacion" type="text" aria-describedby="nameHelp" placeholder="Enter Titulaci&oacute;n">
+                </div>
+
+                <div class="col-md-12">
+                  <label for="exampleInputLastName">Sección</label>
+                  <select id="idtipoComboC"  class="form-control"  aria-describedby="nameHelp" required >
+
+                  </select>
+                  
+                </div>
+              </section>
+          </div>
+
+        </section>
       </section>
 
-      <!-- formulario Ingresar carrera-->
-      <section  hidden>
-        <div class="card  mx-auto mt-7">
+      <!--   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++     -->
 
-          
+      <!--   Seccion persona-->
+      <section >
+        <h1> DATOS PERSONAS</h1>
+        <!--   tabla persona-->
+        <section>
+          <div class="card  mx-auto mt-7">
+          <input id="nuevo" onclick="cargarPersona()" type="button" value="Cargar Datos Persona"  class="btn btn-success">
+          </div>
+
+
+          <table class="table table-bordered" >
+              <thead>
+                      <tr>
+                        <th>Codigo</th>
+                        <th>identificación</th>
+                        <th>nombre</th>
+                        <th>apellido</th> 
+                        <th>usuario</th> 
+                        <th>fechanacimiento</th> 
+                        <th>tipo</th> 
+                        <th colspan="2">Acciones</th>   
+                      </tr> 
+              </thead>
+          <tbody id ="tablaDatosPersona"></tbody>
+
+          </table>
+        </section>
+
+        <!-- formulario Ingresar persona-->
+        <section  >
+          <div class="card  mx-auto mt-7">
+            <input id="buscarP" type="search" placeholder="Search">
+            <button onclick="filtrarPersona()"  >Buscar Persona</button>
+
             <div>
-              <input id="nuevo2" onclick="probando()" type="button" value="Guardar"  class="btn btn-success">
-            </div>
-          
-           
-         
-
+              <input id="nuevo" onclick="validarPersona()" type="button" value="Guardar Persona"  class="btn btn-success">
+            </div>     
             <section >
               <div class="col-md-6">
                 <label for="exampleInputLastName">Codigo</label>
-                <input class="form-control" id="idCodigo" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
+                <input class="form-control" id="idpersona" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
               </div>
               <div class="col-md-6">
-                <label for="exampleInputLastName">Nombre/ Name</label>
-                <input class="form-control" id="idNombre" type="text" aria-describedby="nameHelp" placeholder="Enter name">
-              </div>
-
-              <div class="col-md-6">
-                <label for="exampleInputLastName">Direcci&oacute;n</label>
-                <input class="form-control" id="idDireccion" type="text" aria-describedby="nameHelp" placeholder="Enter Dirección">
+                <label for="exampleInputLastName">identificación/ Name</label>
+                <input class="form-control" id="ididentificacion" type="text" aria-describedby="nameHelp" placeholder="identificación">
               </div>
 
               <div class="col-md-6">
-                <label for="exampleInputLastName">Telefono</label>
-                <input class="form-control" id="idTelefono" type="text" aria-describedby="nameHelp" placeholder="Enter Telefono">
+                <label for="exampleInputLastName">nombre</label>
+                <input class="form-control" id="idnombre" type="text" aria-describedby="nameHelp" placeholder="nombre">
               </div>
 
               <div class="col-md-6">
-                <label for="exampleInputLastName">Correo</label>
-                <input class="form-control" id="idCorreo" type="text" aria-describedby="nameHelp" placeholder="Enter Correo">
+                <label for="exampleInputLastName">apellido</label>
+                <input class="form-control" id="idapellido" type="text" aria-describedby="nameHelp" placeholder="apellido">
               </div>
 
               <div class="col-md-6">
-                <label for="exampleInputLastName">Titulaci&oacute;n</label>
-                <input class="form-control" id="idTitulacion" type="text" aria-describedby="nameHelp" placeholder="Enter Titulaci&oacute;n">
+                <label for="exampleInputLastName">usuario</label>
+                <input class="form-control" id="idusuario" type="text" aria-describedby="nameHelp" placeholder="usuario">
               </div>
 
               <div class="col-md-6">
-                
-                <label for="exampleInputLastName"> Tipo Secci&oacute;n</label>
-                <input class="form-control" id="idtipo" type="text" aria-describedby="nameHelp" placeholder="Enter Secci&oacute;n">
-                <br>
+                <label for="exampleInputLastName">fechanacimiento</label>
+                <input class="form-control" id="idfechanacimiento" type="text" aria-describedby="nameHelp" placeholder="fechanacimiento">
+              </div>
 
-                <select id="idtipoCombo"  class="form-control"  aria-describedby="nameHelp" required >
+              <div class="col-md-12">
+                <label for="exampleInputLastName">Tipo Persona</label>
+                <select id="idcombotipoP"  class="form-control"  aria-describedby="nameHelp" required >
 
                 </select>
                 
               </div>
             </section>
-        </div>
+          </div>
 
+        </section>
       </section>
-
-      <!--   tabla persona-->
-      <section>
-        <div>
-         <input id="nuevo" onclick="cargarPersona()" type="button" value="Cargar Datos Persona"  class="btn btn-success">
-        </div>
-
-
-        <table class="table table-bordered" >
-            <thead>
-                    <tr>
-                      <th>Codigo</th>
-                      <th>identificación</th>
-                      <th>nombre</th>
-                      <th>apellido</th> 
-                      <th>usuario</th> 
-                      <th>fechanacimiento</th> 
-                      <th>tipo</th> 
-                      <th colspan="2">Acciones</th>   
-                    </tr> 
-            </thead>
-        <tbody id ="tablaDatosPersona"></tbody>
-
-        </table>
-      </section>
-
-      <!-- formulario Ingresar persona-->
-      <section  >
-        <div class="card  mx-auto mt-7">
-
-
-          <div>
-            <input id="nuevo" onclick="validar()" type="button" value="Guardar"  class="btn btn-success">
-          </div>     
-          <section >
-            <div class="col-md-6">
-              <label for="exampleInputLastName">Codigo</label>
-              <input class="form-control" id="idpersona" type="text" aria-describedby="nameHelp" placeholder=" Codigo" disabled>
-            </div>
-            <div class="col-md-6">
-              <label for="exampleInputLastName">identificación/ Name</label>
-              <input class="form-control" id="ididentificacion" type="text" aria-describedby="nameHelp" placeholder="identificación">
-            </div>
-
-            <div class="col-md-6">
-              <label for="exampleInputLastName">nombre</label>
-              <input class="form-control" id="idnombre" type="text" aria-describedby="nameHelp" placeholder="nombre">
-            </div>
-
-            <div class="col-md-6">
-              <label for="exampleInputLastName">apellido</label>
-              <input class="form-control" id="idapellido" type="text" aria-describedby="nameHelp" placeholder="apellido">
-            </div>
-
-            <div class="col-md-6">
-              <label for="exampleInputLastName">usuario</label>
-              <input class="form-control" id="idusuario" type="text" aria-describedby="nameHelp" placeholder="usuario">
-            </div>
-
-            <div class="col-md-6">
-              <label for="exampleInputLastName">fechanacimiento</label>
-              <input class="form-control" id="idfechanacimiento" type="text" aria-describedby="nameHelp" placeholder="fechanacimiento">
-            </div>
-
-            <div class="col-md-6">
-
-              <select id="idcombotipoP"  class="form-control"  aria-describedby="nameHelp" required >
-
-              </select>
-              
-            </div>
-          </section>
-        </div>
-
-      </section>
-
 
       
     <!-- interaccion-->
@@ -202,7 +201,7 @@ Custom CSS -->
       <script>
         window.onload = function() {
         //funciones a ejecutar
-        cargarCombo();
+        cargarComboSeccion();
         cargarCarrera();
         cargarPersona();
         cargarComboTipoPersona();

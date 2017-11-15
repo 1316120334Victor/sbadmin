@@ -1,11 +1,11 @@
 <?php 
 	include('../Configuracion/conexion.php');
-	include('../datos/carpersonarera.php');
+	include('../datos/persona.php');
     $persona = new Persona($conn);
 
-	$nombre=$_POST["buscar"];
+	$campo=$_POST["buscarP"];
 	
-	echo $carrera->filtrar($Nombre);
+	echo $persona->filtrar($campo);
 
 
  ?>

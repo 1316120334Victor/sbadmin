@@ -269,9 +269,9 @@
 	\************************************/
 		function filtrar($buscar)
 		{
-			$sql=" SELECT `idpersona`, `identificacion`, `nombre`, `apellido`, `usuario`, `fechanacimiento`, `idtipo` FROM `persona` 
-						INNER JOIN tipopersona ON persona.idpersona=tipopersona.idtipo   
-						where nombre like '%".$buscar."%' or descripcion like '%".$buscar."%' ";
+			$sql=" SELECT `idpersona`, `identificacion`, `nombre`, `apellido`, `usuario`, `fechanacimiento`, tipopersona.descripcion FROM `persona` 
+						INNER JOIN tipopersona ON persona.idtipo=tipopersona.idtipo   
+						where nombre like '%".$buscar."%'";
 
 			try 
 			{

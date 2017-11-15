@@ -3,9 +3,9 @@
 	include('../datos/carrera.php');
 	$carrera = new Carrera($conn);
 
-	$Nombre=$_POST["buscar"];
+	$campo=$_POST["buscarC"];
 	
-	echo $carrera->filtrar($Nombre);
+	echo $carrera->filtrar($campo);
 
 
  ?>

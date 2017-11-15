@@ -20,7 +20,7 @@ function cargarCarrera()
                         var data = JSON.parse(requestData);
                         //var data = JSON.stringify(requestData);
                         //alert(data);
-                        actualizartabla(data);
+                        actualizartablaCarrera(data);
                     }
                  });
 
@@ -53,19 +53,19 @@ function eliminarCarrera(id)
 }
 
 
-function actualizartabla(data)
+function actualizartablaCarrera(data)
 {
 
-                $("#tablaDatos").html("");    
+                $("#tablaDatosCarrera").html("");    
                 $.each(data, function(i, item) {
-                    $("#tablaDatos").append("<tr><td>"+ item.idcarrera +"\
+                    $("#tablaDatosCarrera").append("<tr><td>"+ item.idcarrera +"\
                                 </td><td>"+ item.Nombre +"</td>\
                                 <td>"+ item.Direccion +"</td> \
                                 <td>"+ item.Telefono +"</td>\
                                 <td>"+ item.Correo +"</td>\
                                 <td>"+ item.Titulacion +"</td> \
                                 <td>"+ item.idtipo +"</td> \
-                                <td><button type='button' class='btn btn-info' onClick='prepararActualizar("+item.idcarrera+")'><i class='fa fa-check'></i></button></td>\
+                                <td><button type='button' class='btn btn-info' onClick='prepararActualizarCarrera("+item.idcarrera+")'><i class='fa fa-check'></i></button></td>\
                                 <td><button type='button' class='btn btn-danger' onClick='eliminarCarrera("+item.idcarrera+")'><i class='fa fa-close'></i></button></td></tr>");
                     });
 }
@@ -81,7 +81,7 @@ function ingresarCarrera()
     data.append('Telefono', $("#idTelefono").val() );
     data.append('Correo', $("#idCorreo").val() );
     data.append('Titulacion', $("#idTitulacion").val() );
-    data.append('idtipo', $("#idtipo").val() );
+    data.append('idtipo', $("#idtipoComboC").val() );
 
                    $.ajax({
                     //url: "procesos/mostrarCarrera.php", 
@@ -111,7 +111,7 @@ function modificarCarrera()
     data.append('Correo', $("#idCorreo").val() );
     data.append('Titulacion', $("#idTitulacion").val() );
     //data.append('idtipo', $("#idtipo").val() );
-    data.append('idtipo', $("#idtipoCombo").val() );
+    data.append('idtipo', $("#idtipoComboC").val() );
     //alert($("#idtipoCombo").val() );
 
                    $.ajax({
@@ -125,14 +125,14 @@ function modificarCarrera()
                     success: function(requestData)   // A function to be called if request succeeds
                     {
                        cargarCarrera();
-                       limpiarForm();
+                       limpiarFormCarrera();
                     }
                  });
 
 }
 
 
-function prepararActualizar(id)
+function prepararActualizarCarrera(id)
 {
     var data= new   FormData();
     data.append('codigo',id);
@@ -149,7 +149,7 @@ function prepararActualizar(id)
                     {
                         var data = JSON.parse(requestData);
                        // alert(data);
-                        llenarForm(data);
+                       llenarFormCarrera(data);
                     }
                   
 
@@ -158,7 +158,7 @@ function prepararActualizar(id)
 }
 
 
-function llenarForm(data)
+function llenarFormCarrera(data)
 {
      $.each(data,function(i,item)
      {
@@ -167,28 +167,26 @@ function llenarForm(data)
          $('#idTelefono').val(item.Telefono);
          $('#idCorreo').val(item.Correo);
          $('#idTitulacion').val(item.Titulacion);
-         $('#idtipo').val(item.idtipo);
          $('#idDireccion').val(item.Direccion);
-         $('#idtipoCombo').val(item.idtipo);
+         $('#idtipoComboC').val(item.idtipo);
      });
 }
 
-function limpiarForm(data)
+function limpiarFormCarrera(data)
 {
          $('#idCodigo').val("");
          $('#idNombre').val("");
          $('#idTelefono').val("");
          $('#idCorreo').val("");
          $('#idTitulacion').val("");
-         $('#idtipo').val("");
          $('#idDireccion').val("");
-         $('#idtipoCombo').val("");
+         $('#idtipoComboC').val("");
          $('#buscar').val("");
 
 }
 
 
-function probando(){
+function validarCarrera(){
     
     
      if( $('#idCodigo').val()=="")
@@ -208,7 +206,7 @@ function probando(){
 }
 
 
-function cargarCombo() {
+function cargarComboSeccion() {
     //alert("En esta funcion se carga la tabla");
 
                 var data = new FormData();
@@ -227,7 +225,7 @@ function cargarCombo() {
                         //alert(data);
                           $.each(data,function(i,item)
                                  {
-                                     $('#idtipoCombo').append("<option value='"+item.IdSeccion+"'>"+item.Descripcion+"</option>");
+                                     $('#idtipoComboC').append("<option value='"+item.idSeccion+"'>"+item.Descripcion+"</option>");
                                  });
 
                     }
@@ -241,10 +239,10 @@ function filtrarCarrera()
     var data = new FormData();
 
     //data.append('idcarrera', idCodigo().val() );
-    data.append('buscar', $('#buscar').val());
+    data.append('buscarC', $('#buscarC').val());
                    $.ajax({
                     //url: "procesos/mostrarCarrera.php", 
-                    url: "procesos/filtrarAll.php",         // Url to which the request is send
+                    url: "procesos/filtrarAllCarrera.php",         // Url to which the request is send
                     type: "POST",             // Type of request to be send, called as method
                     data: data,               // Data sent to server, a set of key/value pairs (i.e. form fields and values)
                     contentType: false,       // The content type used when sending data to the server.
@@ -451,7 +449,7 @@ function llenarFormPersona(data)
      });
 }
 
-function limpiarForm(data)
+function limpiarFormPersona(data)
 {
     $('#idpersona').val("");
     $('#ididentificacion').val("");
@@ -464,7 +462,7 @@ function limpiarForm(data)
 }
 
 
-function validar(){
+function validarPersona(){
     
     
      if( $('#idpersona').val()=="")
@@ -518,7 +516,7 @@ function filtrarPersona()
     var data = new FormData();
 
     //data.append('idcarrera', idCodigo().val() );
-    data.append('buscar', $('#buscarP').val());
+    data.append('buscarP', $('#buscarP').val());
                    $.ajax({
                     //url: "procesos/mostrarCarrera.php", 
                     url: "procesos/filtrarAllPersona.php",         // Url to which the request is send

@@ -16,15 +16,15 @@
 	
 
 	//echo $persona->read();
-	//echo $persona->update(2,654,'LIMON','sd','ING','2016-09-19','1');
+	//echo $persona->update(5,654,'LIMON','ab','ING','2016-09-19','1');
 	//echo $persona->create(654,'LIMON','sd','ING','2016-09-19','1');
 	//echo $persona->delete(5);
-	//echo $persona->read();
+	echo $persona->filtrar(a);
 
 
 //echo $tipopersona->read();
 
 
-echo $persona->getId(2);
+//echo $persona->getId(2);
 
  ?>

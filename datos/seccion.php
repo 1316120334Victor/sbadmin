@@ -41,7 +41,7 @@
 
 		function read()
 		{
-			$sql="SELECT `IdSeccion`, `Descripcion` FROM `seccion` ";
+			$sql="SELECT `idSeccion`, `Descripcion` FROM `seccion` ";
 
 			try 
 			{
@@ -52,7 +52,7 @@
 				while ($fila=$sentencia->fetch(PDO::FETCH_NUM,PDO::FETCH_ORI_NEXT))
 				{
 					$seccion=array();
-					$seccion['IdSeccion']=$fila[0];
+					$seccion['idSeccion']=$fila[0];
 					$seccion['Descripcion']=$fila[1];
 					$objSeccion[]=$seccion;
 				}
@@ -66,16 +66,16 @@
 			}
 		}
 
-		function update($IdSeccion,$Descripcion)
+		function update($idSeccion,$Descripcion)
 		{
-			$sql="UPDATE `seccion` SET `Descripcion`=:Descripcion WHERE IdSeccion=:IdSeccion";
+			$sql="UPDATE `seccion` SET `Descripcion`=:Descripcion WHERE idSeccion=:idSeccion";
 
 			try
 			{
 				$sentencia=$this->db->prepare($sql);
 
 				//binmParam: vincuyla un parametro al nombre del variable especifica
-				$sentencia->bindParam(':IdSeccion',$IdSeccion, PDO::PARAM_STR);
+				$sentencia->bindParam(':idSeccion',$IdSeccion, PDO::PARAM_STR);
 				$sentencia->bindParam(':Descripcion',$Descripcion, PDO::PARAM_STR);
 				//PDOStatement::execute - Ejecuta una sentencia preparada
 				//Devuelve True en caso de exito o False en caso de error
@@ -93,14 +93,14 @@
 			}
 		}
 
-		function delete($IdSeccion)
+		function delete($idSeccion)
 		{
-			$sql="DELETE FROM `seccion` WHERE IdSeccion=:IdSeccion";
+			$sql="DELETE FROM `seccion` WHERE idSeccion=:idSeccion";
 
 			try 
 			{
 				$sentencia=$this->db->prepare($sql);
-				$sentencia->bindParam('IdSeccion=:IdSeccion',PDO::PARAM_STR);
+				$sentencia->bindParam('idSeccion=:idSeccion',PDO::PARAM_STR);
 
 				if ($sentencia->execute()) {
 					return 1;
